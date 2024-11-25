@@ -5,6 +5,7 @@ import { ThemeToggle } from "@/components/theme/ThemeToggle";
 import Logo from "@/components/shared/Logo";
 import { useState } from "react";
 
+
 const Navbar = () => {
   const links = [
     {
@@ -44,7 +45,7 @@ const Navbar = () => {
 
         <div className="md:hidden flex items-center gap-2">
           <Logo />
-          <p>prabhjot.dev</p>
+          <p className="font-primary">prabhjot.dev</p>
         </div>
 
         <div>

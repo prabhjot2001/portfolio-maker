@@ -9,7 +9,7 @@ import {
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import NamePronounciation from "@/assets/audio/prabhjot.m4a";
-// import MyImage from "@/assets/images/prabhjot1.jpg";
+import MyImage from "@/assets/images/dp1.png";
 import { useRef, useState } from "react";
 import Map from "@/components/map/Map";
 import Modal from "@/components/shared/Modal";
@@ -44,7 +44,8 @@ const Hero = () => {
         <div>
           <img
             src={
-              "https://pics.craiyon.com/2024-09-10/AjZTcBIkTKmxYYo1v707RQ.webp"
+              MyImage
+              // "https://pics.craiyon.com/2024-09-10/AjZTcBIkTKmxYYo1v707RQ.webp"
             }
             alt="prabhjot"
             className="w-56 aspect-square rounded-xl transform scale-x-[1] hover:border-2 border-amber-500"
@@ -72,7 +73,7 @@ const Hero = () => {
           <div className="space-y-2 mt-6">
             <p className="">
               23-year-old software developer from{" "}
-              <TooltipWrapper message="Click to see the on map">
+              <TooltipWrapper message="Click to see location on map">
                 <span onClick={handleOpenModal} className="hover:underline">
                   India.
                 </span>
