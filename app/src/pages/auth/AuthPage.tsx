@@ -7,7 +7,7 @@ const AuthPage = () => {
     <div className="">
       <Tabs
         defaultValue="sign-in"
-        className="w-[400px] flex flex-col items-center justify-center mx-auto mt-20"
+        className="max-w-sm flex flex-col items-center justify-center mx-auto mt-20"
       >
         <TabsList className="w-full">
           <TabsTrigger value="sign-in" className="w-full">
