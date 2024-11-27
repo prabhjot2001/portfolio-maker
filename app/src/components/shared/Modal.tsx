@@ -1,6 +1,7 @@
 import { X } from "lucide-react";
 import React from "react";
 import { Button } from "@/components/ui/button";
+import { useEffect } from "react";
 
 interface ModalProps {
   children: React.ReactNode;
@@ -10,8 +11,21 @@ interface ModalProps {
 
 const Modal = ({ children, isOpen, onClose }: ModalProps) => {
   if (!isOpen) return null;
+  // useEffect(() => {
+  //   // Disable background scroll when the modal is open
+  //   if (isOpen) {
+  //     document.body.style.overflow = "hidden";
+  //   } else {
+  //     document.body.style.overflow = "auto";
+  //   }
+
+  //   // Clean up: reset overflow when modal is closed
+  //   return () => {
+  //     document.body.style.overflow = "auto";
+  //   };
+  // }, [isOpen]);
   return (
-    <div className="fixed inset-0 z-50 flex justify-center items-center bg-secondary/80 backdrop-blur-sm bg-opacity-50">
+    <div className="fixed inset-0 z-50 flex justify-center items-center bg-background">
       <div className="max-w-md w-full p-2">
         <Button
           variant={"secondary"}

@@ -1,6 +1,8 @@
+import Editor from "@/components/shared/Editor";
 import SectionHeading from "@/components/shared/SectionHeading";
 import TooltipWrapper from "@/components/shared/TooltipWrapper";
 import { Button } from "@/components/ui/button";
+
 import {
   ArrowRight,
   BriefcaseBusiness,
@@ -10,6 +12,7 @@ import {
   Rss,
   Settings,
 } from "lucide-react";
+
 import { Link } from "react-router-dom";
 
 const DashboardPage = () => {
@@ -50,11 +53,11 @@ const DashboardPage = () => {
   ];
 
   return (
-    <div>
+    <div className="pb-10">
       <div>
         <SectionHeading>Dashboard</SectionHeading>
       </div>
-      <div className="w-full relative flex gap-4">
+      <div className="relative flex gap-4 border">
         {/* <--- sidebar navigation ---> */}
         <aside className="flex border-r flex-col items-center justify-between gap-10">
           {/* <--- upper part ---> */}
@@ -81,11 +84,16 @@ const DashboardPage = () => {
         </aside>
 
         {/* <--- main content ---> */}
-        <main>
+        <main className="w-full py-2 pr-4">
           <h3 className="text-lg font-medium font-primary mb-6">Home</h3>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 flex-wrap">
-            {/* <LinkCard>Blog</LinkCard> */}
-            // todo: here goes the dynamic component
+          <div className="h-[24rem]">
+            {/* // todo: here goes the dynamic component */}
+            <Editor />
+          </div>
+          <div className="flex justify-end">
+            <Button asChild variant={"default"} size={"sm"}>
+              <Link to="/preview">See preview</Link>
+            </Button>
           </div>
         </main>
       </div>

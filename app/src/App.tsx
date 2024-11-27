@@ -9,6 +9,7 @@ import ErrorPage from "@/pages/error/ErrorPage";
 import DashboardPage from "@/pages/dashboard/DashboardPage";
 import MyPetPage from "@/pages/pet/MyPetPage";
 import Blog from "@/components/standAloneComponents/Blog";
+import PreviewPage from "./pages/preview/PreviewPage";
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/auth" element={<AuthPage />} />
         <Route path="/dashboard" element={<DashboardPage />} />
+        <Route path="/preview" element={<PreviewPage />} />
         <Route path="/leo" element={<MyPetPage />} />
         <Route path="/*" element={<ErrorPage />} />
       </Route>
