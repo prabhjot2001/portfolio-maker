@@ -45,7 +45,7 @@ const Hero = () => {
           <img
             src={
               MyImage
-              // "https://pics.craiyon.com/2024-09-10/AjZTcBIkTKmxYYo1v707RQ.webp"
+              // ""
             }
             alt="prabhjot"
             className="w-56 aspect-square rounded-xl transform scale-x-[1] hover:border-2 border-amber-500"
@@ -74,7 +74,7 @@ const Hero = () => {
             <p className="">
               23-year-old software developer from{" "}
               <TooltipWrapper message="Click to see location on map">
-                <span onClick={handleOpenModal} className="hover:underline">
+                <span onClick={handleOpenModal} className="underline ">
                   India.
                 </span>
               </TooltipWrapper>

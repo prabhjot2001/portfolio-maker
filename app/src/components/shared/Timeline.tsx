@@ -1,7 +1,5 @@
 import { Link } from "react-router-dom";
-import { Code2, Globe } from "lucide-react";
-import { link } from "fs";
-import { url } from "inspector";
+import { Code2 } from "lucide-react";
 
 const timelineData = [
   {
@@ -20,28 +18,13 @@ const timelineData = [
         url: "random",
         icon: <Code2 className="w-3" />,
       },
-      {
-        link: "source",
-        url: "random2",
-        icon: <Globe className="w-3" />,
-      },
-      {
-        link: "source",
-        url: "random2",
-        icon: <Globe className="w-3" />,
-      },
-      {
-        link: "source",
-        url: "random2",
-        icon: <Globe className="w-3" />,
-      },
     ],
   },
 ];
 
 const Timeline = () => {
   return (
-    <div className="border rounded-xl p-4 pl-6 space-y-10">
+    <div className="border shadow-md rounded-xl p-4 pl-6 space-y-10">
       <TimelineCard data={timelineData} />
     </div>
   );

@@ -8,6 +8,7 @@ import ContactPage from "@/pages/contact/ContactPage";
 import ErrorPage from "@/pages/error/ErrorPage";
 import DashboardPage from "@/pages/dashboard/DashboardPage";
 import MyPetPage from "@/pages/pet/MyPetPage";
+import Blog from "@/components/standAloneComponents/Blog";
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
         <Route path="/" element={<HomePage />} />
         <Route path="/projects" element={<ProjectPage />} />
         <Route path="/blog" element={<BlogPage />} />
+        <Route path="/blog/:id" element={<Blog />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/auth" element={<AuthPage />} />
         <Route path="/dashboard" element={<DashboardPage />} />

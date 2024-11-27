@@ -62,7 +62,7 @@ const SignUp = () => {
 
   return (
     <div>
-      <h3 className="scroll-m-20 text-2xl font-bold tracking-tight text-center">
+      <h3 className="scroll-m-20 font-primary text-2xl font-medium tracking-tight text-center">
         Sign Up
       </h3>
       <p className="text-sm mt-2 text-muted-foreground text-center">
