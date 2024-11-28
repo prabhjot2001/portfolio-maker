@@ -12,7 +12,7 @@ const PreviewPage = () => {
           className=""
         ></div>
       ) : (
-        <p>No preview to show</p>
+        previewContent.length <= 0 && <p>No preview to show</p>
       )}
     </div>
   );

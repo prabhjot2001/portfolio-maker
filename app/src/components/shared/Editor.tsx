@@ -1,8 +1,6 @@
 import { useRef, useState, useContext } from "react";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
-import { Button } from "../ui/button";
-import { Link } from "react-router-dom";
 import { PreviewContext } from "@/context/previewContext";
 
 const Editor = () => {

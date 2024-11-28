@@ -1,6 +1,6 @@
 import { createContext, useState } from "react";
 
-export const PreviewContext = createContext("");
+export const PreviewContext = createContext(null);
 
 const PreviewContextProvider = ({ children }) => {
   const [previewContent, setPreviewContent] = useState("");
