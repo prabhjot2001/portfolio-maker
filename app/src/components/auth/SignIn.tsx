@@ -1,10 +1,13 @@
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
-import { login } from "@/api/Login";
 import { useToast } from "@/hooks/use-toast";
+import { useAuth } from "@/hooks/useAuth";
+import { useNavigate } from "react-router-dom";
 
 const SignIn = () => {
+  const { handleLogin } = useAuth();
+  const navigate = useNavigate();
   const { toast } = useToast();
   const [formData, setFormData] = useState({
     email: "",
@@ -33,13 +36,14 @@ const SignIn = () => {
     setIsSubmitting(true);
 
     try {
-      const response = await login(formData);
+      const response = await handleLogin(formData);
       if (response?.success) {
         toast({
           title: "Login Successful",
           description: "Welcome back! Redirecting...",
         });
         // todo : redirect user when authenticated
+        navigate("/dashboard");
       } else {
         toast({
           title: "Login Failed",

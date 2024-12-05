@@ -28,8 +28,9 @@ export const register = async ({
       const res = {
         success: true,
         message: response.data.body.msg,
-        // data: response.data.data,
       };
+
+      console.log(response);
       return res;
     }
     if (response.status === 400) {

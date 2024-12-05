@@ -17,9 +17,9 @@ export function ThemeToggle() {
   return (
     <Button variant="ghost" size="icon" onClick={changeTheme}>
       {getCurrentTheme() === "dark" ? (
-        <Sun className="w-5 h-5 text-yellow-500" />
+        <Sun className="w-5 h-5 text-primary" />
       ) : (
-        <Moon className="w-5 h-5 text-blue-600" />
+        <Moon className="w-5 h-5 text-primary" />
       )}
     </Button>
   );

@@ -24,7 +24,7 @@ const timelineData = [
 
 const Timeline = () => {
   return (
-    <div className="border shadow-md rounded-xl p-4 pl-6 space-y-10">
+    <div className="border shadow-sm rounded-xl p-4 pl-6 space-y-10">
       <TimelineCard data={timelineData} />
     </div>
   );

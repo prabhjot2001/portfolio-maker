@@ -6,6 +6,7 @@ import StatsTab from "@/components/dashboard/StatsTab";
 import SectionHeading from "@/components/shared/SectionHeading";
 import TooltipWrapper from "@/components/shared/TooltipWrapper";
 import { Button } from "@/components/ui/button";
+import { useAuth } from "@/hooks/useAuth";
 
 import {
   BriefcaseBusiness,
@@ -20,6 +21,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 
 const DashboardPage = () => {
+  const { handleLogout } = useAuth();
   const dashboardNavigationLinks = [
     {
       icon: <Home />,
@@ -121,7 +123,13 @@ const DashboardPage = () => {
               </TooltipWrapper>
             ))}
             <TooltipWrapper message={"Logout"} side={"right"}>
-              <Button variant={"ghost"} size={"icon"}>
+              <Button
+                variant={"ghost"}
+                size={"icon"}
+                onClick={() => {
+                  handleLogout();
+                }}
+              >
                 <LogOut />
               </Button>
             </TooltipWrapper>

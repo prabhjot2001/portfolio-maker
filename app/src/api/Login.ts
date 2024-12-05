@@ -17,12 +17,17 @@ export const login = async ({ email, password }: loginPropType) => {
       const res = {
         success: true,
         message: response.data.body.msg,
-        // data: response.data.data,
+        data: response.data.data,
       };
+
       return res;
     }
     if (response.status === 400) {
-      return { success: false, message: response.data.body.msg };
+      return {
+        success: false,
+        message: response.data.body.msg,
+        data: undefined,
+      };
     }
   } catch (error: any) {
     // console.log(error);
@@ -30,6 +35,7 @@ export const login = async ({ email, password }: loginPropType) => {
       success: false,
       message:
         error.response?.data?.body?.msg || "An unexpected error occurred",
+      data: undefined,
     };
   }
 };

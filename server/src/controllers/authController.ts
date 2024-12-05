@@ -68,26 +68,27 @@ export const authController = {
           email,
         },
       });
-
+      
       if (!user) {
         ctx.set.status = 400;
         return createErrorResponse(400, "Invalid credentials");
       }
-
+      
       const hashedPassword = user.password;
       const passwordMatched = await argon2.verify(hashedPassword, password);
       if (!passwordMatched) {
         ctx.set.status = 400;
         return createErrorResponse(400, "Invalid credentials");
       }
-
+      
       const accessToken = generateAccessToken(user.id);
       const refreshToken = generateRefreshToken(user.id);
-
+      
       await prisma.refreshToken.create({
         data: { token: refreshToken, userId: user.id },
       });
-
+      
+      // console.log("success");
       return createSuccessResponse(200, "user logged in successfully", {
         id: user.id,
         email: user.email,
@@ -108,9 +109,11 @@ export const authController = {
           token: refreshToken,
         },
       });
-
+      ctx.set.status = 204;
       return createSuccessResponse(204, "User logged out");
     } catch (error) {
+      ctx.set.status = 400;
+      createErrorResponse(400, "Some error occured");
       console.log(error);
     }
   },

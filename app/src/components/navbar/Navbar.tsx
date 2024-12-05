@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, Sparkles, X } from "lucide-react";
 import { ThemeToggle } from "@/components/theme/ThemeToggle";
@@ -24,36 +24,41 @@ const Navbar = () => {
       url: "/contact",
     },
     {
-      label: "Sign In",
-      url: "/auth",
-    },
-    {
       label: "Dashboard",
       url: "/dashboard",
     },
-    // {
-    //   link: "Explore more",
-    //   url: "/explore-more",
-    // },
+    {
+      label: "Explore more",
+      url: "/explore-more",
+    },
   ];
   const [toggleMenu, setToggleMenu] = useState(false);
+  const path = useLocation();
   return (
     <>
       <nav className="z-50 border-b sticky top-0 py-6 mb-10 backdrop-blur-sm bg-background/80 flex items-center justify-between">
         {/* <--- desktop nav ---> */}
-        <div className="hidden md:flex items-center space-x-4">
+        <div className="hidden md:flex items-center space-x-4 lowercase">
           <Logo />
           {navigationLinks.map((link, idx) => (
-            <Link key={idx} to={link.url} className="text-muted-foreground">
+            <Link
+              key={idx}
+              to={link.url}
+              className={`text-muted-foreground hover:text-primary ${
+                path.pathname === link.url ? "text-primary" : ""
+              }`}
+            >
               {link.label}
             </Link>
           ))}
         </div>
 
-        <div className="md:hidden flex items-center gap-2">
+        {/* mobile navigation bar starts from here  */}
+
+        <Link to={"/"} className="md:hidden flex items-center gap-2">
           <Logo />
           <p className="font-primary">prabhjot.dev</p>
-        </div>
+        </Link>
 
         <div>
           <div className="flex items-center">
@@ -84,7 +89,9 @@ const Navbar = () => {
               onClick={() => setToggleMenu(false)}
               key={idx}
               to={link.url}
-              className="flex items-center gap-2 text-muted-foreground font-semibold"
+              className={`flex items-center gap-2 text-muted-foreground font-semibold lowercase  hover:text-primary ${
+                path.pathname === link.url ? "text-primary" : ""
+              } `}
             >
               {link.label}
             </Link>

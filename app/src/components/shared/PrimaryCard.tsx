@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const PrimaryCard = () => {
   return (
-    <div className="border shadow-md rounded-xl p-8 pl-6 flex flex-col gap-4 max-w-sm">
+    <div className="border shadow-sm rounded-xl p-8 pl-6 flex flex-col gap-4 max-w-sm">
       <div className="w-full h-40">
         <img
           src="https://tedawf.com/_next/image?url=%2Ftv-tele-alerts.png&w=640&q=75"

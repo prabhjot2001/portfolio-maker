@@ -1,12 +1,5 @@
 import { Button } from "@/components/ui/button";
-import {
-  ArrowDownRight,
-  FileText,
-  Github,
-  Linkedin,
-  Mail,
-  Volume2,
-} from "lucide-react";
+import { ArrowDownRight, FileText, Volume2 } from "lucide-react";
 import { Link } from "react-router-dom";
 import NamePronounciation from "@/assets/audio/prabhjot.m4a";
 import MyImage from "@/assets/images/dp1.png";
@@ -14,29 +7,14 @@ import { useRef, useState } from "react";
 import Map from "@/components/map/Map";
 import Modal from "@/components/shared/Modal";
 import TooltipWrapper from "../shared/TooltipWrapper";
+import { socialLinks } from "@/Data/social-links";
 
 const Hero = () => {
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const [isModalOpen, setModalOpen] = useState(false);
   const handleOpenModal = () => setModalOpen(true);
   const handleCloseModal = () => setModalOpen(false);
-  const socialLinks = [
-    {
-      icon: <Github className="w-5" />,
-      link: "Github",
-      url: "https://github.com/prabhjot2001",
-    },
-    {
-      icon: <Linkedin className="w-5" />,
-      link: "Linkedin",
-      url: "https://www.linkedin.com/in/prabhjot-singh001",
-    },
-    {
-      icon: <Mail className="w-5" />,
-      link: "Email",
-      url: "prabhjot1671@gmail.com",
-    },
-  ];
+
   return (
     <div>
       <section className="flex flex-col items-start md:flex-row-reverse md:items-center justify-between gap-10 ">
@@ -48,14 +26,14 @@ const Hero = () => {
               // ""
             }
             alt="prabhjot"
-            className="w-56 aspect-square rounded-xl transform scale-x-[1] hover:border-2 border-amber-500"
+            className="w-56 aspect-square rounded-xl transform scale-x-[1]"
           />
         </div>
         {/* <--- Hero section ---> */}
         <div>
           <h1 className="font-primary scroll-m-20 text-4xl font-medium tracking-normal lg:text-5xl flex items-center gap-2 flex-wrap">
             hi prabhjot{" "}
-            <TooltipWrapper message="Listen pronunciation">
+            <TooltipWrapper message="Listen pronunciation" side={"top"}>
               <Button
                 variant={"ghost"}
                 size={"icon"}
@@ -73,7 +51,7 @@ const Hero = () => {
           <div className="space-y-2 mt-6">
             <p className="">
               23-year-old software developer from{" "}
-              <TooltipWrapper message="Click to see location on map">
+              <TooltipWrapper message="Click to see location on map" side="top">
                 <span onClick={handleOpenModal} className="underline ">
                   India.
                 </span>
@@ -104,7 +82,7 @@ const Hero = () => {
               </Button>
             </TooltipWrapper>
             {socialLinks.map((link, idx) => (
-              <TooltipWrapper message={link.link}>
+              <TooltipWrapper message={link.link} side={"top"}>
                 <Link
                   key={idx}
                   target="_blank"

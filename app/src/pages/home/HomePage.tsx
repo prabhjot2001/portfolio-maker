@@ -5,13 +5,14 @@ import ProjectPage from "../project/ProjectPage";
 import Projects from "@/components/standAloneComponents/Projects";
 import SectionHeading from "@/components/shared/SectionHeading";
 import BlogPostCard from "@/components/shared/BlogPostCard";
+import ExpEdu from "@/components/standAloneComponents/ExpEdu";
 
 const HomePage = () => {
   return (
-    <div className="space-y-10">
+    <div className="space-y-10 pb-20">
       <Hero />
-      <SectionHeading>Experience</SectionHeading>
-      <Timeline />
+      <SectionHeading>{""}</SectionHeading>
+      <ExpEdu />
       <SectionHeading
         showAdditionalButton={true}
         buttonText="View more"

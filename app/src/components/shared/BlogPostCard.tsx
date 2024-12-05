@@ -5,7 +5,7 @@ const BlogPostCard = () => {
   return (
     <Link
       to={`blog/${blogId}`}
-      className="border shadow-md rounded-xl p-8 pl-6 flex flex-col gap-4"
+      className="border shadow-sm rounded-xl p-8 pl-6 flex flex-col gap-4"
     >
       <h2 className="font-semibold text-lg leading-none">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis,

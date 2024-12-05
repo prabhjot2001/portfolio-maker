@@ -17,8 +17,8 @@ const SectionHeading = ({
 }: SectionHeadingProps) => {
   return (
     <div className="flex items-center justify-between mb-6">
-      <div className="bg-secondar rounded-md py-1 px-2 inline-block">
-        <h2 className="font-medium text-2xl font-primary">{children}</h2>
+      <div className="bg-secondar rounded-md inline-block underline decoration-wavy underline-offset-2 bg-clip-text text-transparent bg-secondary-foreground">
+        <h2 className="font-semibold text-2xl font-primary">{children}</h2>
       </div>
       {showAdditionalButton && (
         <Button
