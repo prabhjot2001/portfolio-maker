@@ -3,6 +3,7 @@ import HomeTab from "@/components/dashboard/HomeTab";
 import ProfessionalTab from "@/components/dashboard/ProfessionalTab";
 import SettingsTab from "@/components/dashboard/SettingsTab";
 import StatsTab from "@/components/dashboard/StatsTab";
+import Modal from "@/components/shared/Modal";
 import SectionHeading from "@/components/shared/SectionHeading";
 import TooltipWrapper from "@/components/shared/TooltipWrapper";
 import { Button } from "@/components/ui/button";
@@ -22,6 +23,7 @@ import { Link } from "react-router-dom";
 
 const DashboardPage = () => {
   const { handleLogout } = useAuth();
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const dashboardNavigationLinks = [
     {
       icon: <Home />,
@@ -89,7 +91,7 @@ const DashboardPage = () => {
       </div>
       <div className="relative flex flex-col md:flex-row border rounded-lg">
         {/* <--- sidebar navigation ---> */}
-        <aside className="flex border-b md:border-r md:border-b-0 md:flex-col items-center justify-between md:gap-10">
+        <aside className="flex border-b md:border-r md:border-b-0 md:flex-col items-center justify-between md:gap-10 rounded-l-md">
           {/* <--- upper part ---> */}
           <div className="p-2 flex md:flex-col ">
             {dashboardNavigationLinks.map((link, idx) => (
@@ -126,18 +128,39 @@ const DashboardPage = () => {
               <Button
                 variant={"ghost"}
                 size={"icon"}
-                onClick={() => {
-                  handleLogout();
-                }}
+                onClick={() => setIsModalOpen(true)}
+                className="text-red-600"
               >
-                <LogOut />
+                <LogOut className="" />
               </Button>
             </TooltipWrapper>
           </div>
         </aside>
 
+        <Modal onClose={() => setIsModalOpen(false)} isOpen={isModalOpen}>
+          <div className="rounded-md flex flex-col gap-6 border p-6 bg-background">
+            <p className="font-medium">Are you sure, you want to logout?</p>
+            <div className="flex justify-end gap-2">
+              <Button
+                variant={"destructive"}
+                onClick={() => {
+                  handleLogout();
+                }}
+              >
+                Logout
+              </Button>
+              <Button
+                variant={"secondary"}
+                onClick={() => setIsModalOpen(false)}
+              >
+                Cancel
+              </Button>
+            </div>
+          </div>
+        </Modal>
+
         {/* <--- main content ---> */}
-        <main className="w-full px-4 md:pt-4 h-[80vh] overflow-y-auto">
+        <main className="w-full px-4 md:pt-4 pb-4 overflow-y-auto">
           {switchTab(tabValue)}
         </main>
       </div>

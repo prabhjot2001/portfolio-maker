@@ -25,12 +25,12 @@ const Modal = ({ children, isOpen, onClose }: ModalProps) => {
   //   };
   // }, [isOpen]);
   return (
-    <div className="fixed inset-0 z-50 flex justify-center items-center bg-background">
+    <div className="fixed inset-0 z-50 flex justify-center items-center bg-secondary-foreground/50 backdrop-blur-sm">
       <div className="max-w-md w-full p-2">
         <Button
           variant={"secondary"}
           size={"icon"}
-          className="absolute top-4 right-4 hover:cursor-pointer"
+          className="absolute top-4 right-4 hover:cursor-pointer text-primary"
           onClick={onClose}
         >
           <X />

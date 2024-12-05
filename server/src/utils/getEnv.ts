@@ -10,3 +10,4 @@ const getEnv = (key: string, defaultValue?: string) => {
 export const JWT_ACCESS_TOKEN = getEnv("JWT_ACCESS_TOKEN");
 export const JWT_REFRESH_TOKEN = getEnv("JWT_REFRESH_TOKEN");
 export const PORT = getEnv("PORT");
+export const SERVER_HOSTNAME = getEnv("SERVER_HOSTNAME");
